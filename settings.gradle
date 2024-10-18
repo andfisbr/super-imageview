@@ -1,1 +1,5 @@
-include ':superimageview', ':samples', ':superimageview-imagecrop', ':superimageview-roundedcorners'
+rootProject.name = "super-imageview"
+include ':samples'
+include ':superimageview'
+include ':superimageview-imagecrop'
+include ':superimageview-roundedcorners'

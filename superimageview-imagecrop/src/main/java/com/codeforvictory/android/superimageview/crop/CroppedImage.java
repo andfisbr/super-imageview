@@ -6,6 +6,7 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 
 import com.codeforvictory.android.superimageview.Crop;
+import com.codeforvictory.android.superimageview.imagecrop.R;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -61,7 +62,7 @@ public final class CroppedImage implements Crop {
         }
 
         final TypedArray a = context.obtainStyledAttributes(attributeSet, R.styleable.siv_ImageCrop);
-        cropType = a.getInt(R.styleable.siv_SuperImageView_siv_cropImplementation, CropType.NONE);
+        cropType = a.getInt(com.codeforvictory.android.superimageview.R.styleable.siv_SuperImageView_siv_cropImplementation, CropType.NONE);
         a.recycle();
 
         setupScaleType();

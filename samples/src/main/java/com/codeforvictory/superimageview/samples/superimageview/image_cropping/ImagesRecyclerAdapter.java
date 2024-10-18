@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import com.bumptech.glide.Glide;
 import com.codeforvictory.android.superimageview.SuperImageView;
 import com.codeforvictory.android.superimageview.crop.CroppedImage;
-import com.codeforvictory.superimageview.samples.superimageview.R;
+import com.codeforvictory.android.superimageview.samples.R;
 import com.codeforvictory.superimageview.samples.superimageview.shared.NetworkImage;
 import java.util.List;
 import java.util.Objects;

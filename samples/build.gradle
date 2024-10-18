@@ -1,67 +1,56 @@
-apply plugin: 'com.android.application'
+plugins {
+        id "com.android.application"
+        id "org.jetbrains.kotlin.android"
+}
 
 android {
-  compileSdkVersion versions.compileSdk
-
-  defaultConfig {
-    applicationId 'com.codeforvictory.android.superimageview.samples'
-    minSdkVersion versions.minSdk
-    targetSdkVersion versions.compileSdk
-
-    versionCode 2000
-    versionName VERSION_NAME
-
-    testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
-  }
-
-  // In case we used Java: https://developer.android.com/studio/write/java8-support
-  compileOptions {
-    sourceCompatibility JavaVersion.VERSION_1_8
-    targetCompatibility JavaVersion.VERSION_1_8
-  }
-
-  buildTypes {
-    release {
-      minifyEnabled true
-      shrinkResources true
-      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-    }
-  }
-
-  testOptions {
-    animationsDisabled = true
-  }
-
-//  bundle {
-//    density.enableSplit = true
-//    abi.enableSplit = true
-//    language.enableSplit = true
-//  }
-
-  /** Due to third party libraries. Not good to exclude everytyhing since APK signature v1 is there */
-  packagingOptions {
-    exclude 'META-INF/LICENSE'
-    exclude 'META-INF/LICENSE.txt'
-    exclude 'META-INF/NOTICE'
-    exclude 'META-INF/NOTICE.txt'
-    exclude 'META-INF/*.version'
-  }
+        namespace 'com.codeforvictory.android.superimageview.samples'
+        compileSdk 34
+        
+        defaultConfig {
+                applicationId 'com.codeforvictory.android.superimageview.samples'
+                minSdk 26
+                targetSdk 34
+                
+                versionCode 2000
+                versionName "2.0.0.0"
+        }
+        
+        // In case we used Java: https://developer.android.com/studio/write/java8-support
+        compileOptions {
+                sourceCompatibility JavaVersion.VERSION_1_8
+                targetCompatibility JavaVersion.VERSION_1_8
+        }
+        
+        
+        buildTypes {
+                release {
+                        minifyEnabled false
+                        proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+                }
+        }
+        compileOptions {
+                sourceCompatibility JavaVersion.VERSION_17
+                targetCompatibility JavaVersion.VERSION_17
+        }
+        kotlinOptions {
+                jvmTarget = '17'
+        }
+        
+        buildFeatures {
+                viewBinding true
+        }
 }
 
 //apply from: rootProject.file('gradle/code-quality-android.gradle')
 
 dependencies {
-  implementation project(':superimageview-imagecrop')
-  implementation project(':superimageview-roundedcorners')
-  implementation 'androidx.core:core:1.0.0'
-  implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-  implementation 'com.google.android.material:material:1.0.0'
-  implementation 'com.github.bumptech.glide:glide:4.8.0'
-  annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
-
-  testImplementation "junit:junit:4.12"
-  testImplementation "org.robolectric:robolectric:4.0-alpha-3"
-  androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
-  androidTestImplementation 'androidx.test:rules:1.1.0-alpha4'
-  androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+        implementation 'androidx.core:core:1.0.0'
+        implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+        implementation 'com.google.android.material:material:1.0.0'
+        implementation 'com.github.bumptech.glide:glide:4.8.0'
+        annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+        
+        implementation project(':superimageview-imagecrop')
+        implementation project(':superimageview-roundedcorners')
 }

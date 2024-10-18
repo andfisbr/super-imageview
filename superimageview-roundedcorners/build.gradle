@@ -1,27 +1,54 @@
-apply plugin: 'com.android.library'
-
-android {
-  resourcePrefix 'siv_'
-
-  compileSdkVersion versions.compileSdk
-
-  defaultConfig {
-    minSdkVersion versions.minSdk
-    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner" // Espresso
-  }
+plugins {
+        id "com.android.library"
+        id "org.jetbrains.kotlin.android"
+        id "maven-publish"
 }
 
-apply from: rootProject.file('gradle/maven-deployment.gradle')
-apply from: rootProject.file('gradle/code-quality-android.gradle')
 
+android {
+        namespace 'com.codeforvictory.android.superimageview.roundedcorners'
+        compileSdk 34
+        
+        defaultConfig {
+                minSdk 26
+                versionCode 1021
+                versionName = "1.0.2.1"
+        }
+        
+        buildTypes {
+                release {
+                        minifyEnabled false
+                        proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+                }
+        }
+        buildFeatures {
+                viewBinding true
+        }
+        compileOptions {
+                sourceCompatibility JavaVersion.VERSION_17
+                targetCompatibility JavaVersion.VERSION_17
+        }
+        kotlinOptions {
+                jvmTarget = '17'
+        }
+}
 dependencies {
-  implementation 'androidx.annotation:annotation:1.0.0'
-  implementation 'androidx.appcompat:appcompat:1.0.0'
-  api project(':superimageview')
+        implementation 'androidx.annotation:annotation:1.0.0'
+        implementation 'androidx.appcompat:appcompat:1.0.0'
+        api project(':superimageview')
+}
 
-  testImplementation 'junit:junit:4.12'
-  testImplementation 'org.assertj:assertj-core:3.11.1'
-  androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
-  androidTestImplementation 'androidx.test:rules:1.1.0-alpha4'
-  androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+
+afterEvaluate {
+        publishing {
+                publications {
+                        release(MavenPublication) {
+                                from components.release
+                                
+                                groupId = "com.github.andfisbr"
+                                artifactId = "af-library"
+                                version = "1.0.6"
+                        }
+                }
+        }
 }

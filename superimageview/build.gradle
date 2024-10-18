@@ -1,21 +1,56 @@
-apply plugin: 'com.android.library'
-
-android {
-  resourcePrefix 'siv_'
-
-  compileSdkVersion versions.compileSdk
-
-  defaultConfig {
-    minSdkVersion versions.minSdk
-    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner" // Espresso
-  }
+plugins {
+        id "com.android.library"
+        id "org.jetbrains.kotlin.android"
+        id "maven-publish"
 }
 
-apply from: rootProject.file('gradle/maven-deployment.gradle')
-apply from: rootProject.file('gradle/code-quality-android.gradle')
+
+android {
+        namespace 'com.codeforvictory.android.superimageview'
+        compileSdk 34
+        
+        defaultConfig {
+                minSdk 26
+                versionCode 1021
+                versionName = "1.0.2.1"
+        }
+        
+        buildTypes {
+                release {
+                        minifyEnabled false
+                        proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+                }
+        }
+        buildFeatures {
+                viewBinding true
+        }
+        compileOptions {
+                sourceCompatibility JavaVersion.VERSION_17
+                targetCompatibility JavaVersion.VERSION_17
+        }
+        kotlinOptions {
+                jvmTarget = '17'
+        }
+}
+
 
 dependencies {
-  implementation 'androidx.annotation:annotation:1.0.0'
-  implementation 'androidx.core:core:1.0.0'
-  implementation 'androidx.appcompat:appcompat:1.0.0'
+        implementation 'androidx.annotation:annotation:1.0.0'
+        implementation 'androidx.core:core:1.0.0'
+        implementation 'androidx.appcompat:appcompat:1.0.0'
+}
+
+
+afterEvaluate {
+        publishing {
+                publications {
+                        release(MavenPublication) {
+                                from components.release
+                                
+                                groupId = "com.github.andfisbr"
+                                artifactId = "super-imageview"
+                                version = "1.0.2.1"
+                        }
+                }
+        }
 }

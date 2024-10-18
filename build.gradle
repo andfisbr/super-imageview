@@ -1,37 +1,31 @@
-// apply plugin: 'com.github.ben-manes.versions'
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-  ext.versions = [
-    'minSdk': 14,
-    'compileSdk': 28,
-    'errorProne': '2.3.1',
-  ]
-
-  repositories {
-    google()
-    jcenter()
-    maven { url 'https://plugins.gradle.org/m2/' } // Error Prone Plugin
-  }
-
-  dependencies {
-    classpath 'com.android.tools.build:gradle:3.3.0-alpha13'
-    classpath 'net.ltgt.gradle:gradle-errorprone-plugin:0.0.16'
-    classpath 'com.github.ben-manes:gradle-versions-plugin:0.20.0'
-  }
+        ext.kotlinVersion = "1.8.20"
+        
+        
+        repositories {
+                jcenter()
+                mavenCentral()
+                google()
+                maven { url "https://jitpack.io" }
+        }
+        
+        dependencies {
+                classpath "com.android.tools.build:gradle:8.3.2"
+                classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        }
 }
 
-subprojects {
-  group = GROUP
-  version = VERSION_NAME
-
-  repositories {
-    google()
-    jcenter()
-  }
-
-  apply from: "${rootDir}/gradle/code-quality.gradle"
+allprojects {
+        repositories {
+                jcenter()
+                mavenCentral()
+                google()
+                maven { url "https://jitpack.io" }
+        }
 }
 
-task clean(type: Delete) {
-  delete rootProject.buildDir
+tasks.register("clean", Delete) {
+        delete rootProject.buildDir
 }

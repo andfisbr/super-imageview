@@ -2,7 +2,8 @@ package com.codeforvictory.superimageview.samples.superimageview.image_cropping;
 
 import android.os.Bundle;
 
-import com.codeforvictory.superimageview.samples.superimageview.R;
+
+import com.codeforvictory.android.superimageview.samples.R;
 import com.codeforvictory.superimageview.samples.superimageview.shared.ImageLocalDataSource;
 import com.codeforvictory.superimageview.samples.superimageview.shared.widget.VerticalTransparentItemDecorator;
 

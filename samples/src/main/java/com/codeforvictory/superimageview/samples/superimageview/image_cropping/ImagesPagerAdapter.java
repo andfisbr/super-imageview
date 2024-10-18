@@ -9,7 +9,7 @@ import android.widget.TextView;
 import com.codeforvictory.android.superimageview.SuperImageView;
 import com.codeforvictory.android.superimageview.crop.CropType;
 import com.codeforvictory.android.superimageview.crop.CroppedImage;
-import com.codeforvictory.superimageview.samples.superimageview.R;
+import com.codeforvictory.android.superimageview.samples.R;
 import com.codeforvictory.superimageview.samples.superimageview.shared.LocalImage;
 
 import java.util.List;
