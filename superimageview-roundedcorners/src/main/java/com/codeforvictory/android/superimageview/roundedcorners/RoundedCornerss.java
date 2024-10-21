@@ -1,20 +1,20 @@
 package com.codeforvictory.android.superimageview.roundedcorners;
 
 final class RoundedCornerss {
-
-    //    private Drawable backgroundDrawable; //? needed? @Nullable ? @NonNull?
+        
+        //    private Drawable backgroundDrawable; //? needed? @Nullable ? @NonNull?
 //    private Drawable drawable; //? needed? @Nullable ? @NonNull?private boolean mMutateBackground = false;
-
-    /**
-     * @return the largest corner radius.
-     */
+        
+        /**
+         * @return the largest corner radius.
+         */
 //    public float getCornerRadiuses() {
 //        return getMaxCornerRadius();
 //    }
-
-    /**
-     * @return the largest corner radius.
-     */
+        
+        /**
+         * @return the largest corner radius.
+         */
 //    public float getMaxCornerRadius() {
 //        float maxRadius = DEFAULT_RADIUS;
 //        for (int i = cornerRadius.length - 1; i >= 0; i--) {
@@ -22,64 +22,64 @@ final class RoundedCornerss {
 //        }
 //        return maxRadius;
 //    }
-
-    /**
-     * Get the imageCorner radius of a specified imageCorner.
-     *
-     * @param imageCorner the imageCorner.
-     * @return the radius.
-     */
+        
+        /**
+         * Get the imageCorner radius of a specified imageCorner.
+         *
+         * @param imageCorner the imageCorner.
+         * @return the radius.
+         */
 //    public float getCornerRadius(@Corner int imageCorner) {
 //        return cornerRadius[imageCorner];
 //    }
-
-    /**
-     * Set the corner radii of all corners in px.
-     *
-     * @param radius the radius to set.
-     */
+        
+        /**
+         * Set the corner radii of all corners in px.
+         *
+         * @param radius the radius to set.
+         */
 //    public void setCornerRadiuses(int radius) {
 //        setCornerRadius(radius, radius, radius, radius);
 //    }
-
-    /**
-     * Set all the corner radii from a dimension resource id.
-     *
-     * @param resId dimension resource id of radii.
-     */
+        
+        /**
+         * Set all the corner radii from a dimension resource id.
+         *
+         * @param resId dimension resource id of radii.
+         */
 //    public void setCornerRadiusDimen(@DimenRes int resId) {
 //        float radius = imageView.getResources().getDimension(resId);
 //        setCornerRadius(radius, radius, radius, radius);
 //    }
-
-    /**
-     * Set the corner radius of a specific corner from a dimension resource id.
-     *
-     * @param corner the corner to set.
-     * @param resId the dimension resource id of the corner radius.
-     */
+        
+        /**
+         * Set the corner radius of a specific corner from a dimension resource id.
+         *
+         * @param corner the corner to set.
+         * @param resId the dimension resource id of the corner radius.
+         */
 //    public void setCornerRadiusDimen(@Corner int corner, @DimenRes int resId) {
 //        if (corner == Corner.NONE) {
 //            return;
 //        }
 //        setCornerRadius(corner, imageView.getResources().getDimensionPixelSize(resId));
 //    }
-
-    /**
-     * Set the corner radii of all corners in px.
-     *
-     * @param radius the radius to set.
-     */
+        
+        /**
+         * Set the corner radii of all corners in px.
+         *
+         * @param radius the radius to set.
+         */
 //    public void setCornerRadius(float radius) {
 //        setCornerRadius(radius, radius, radius, radius);
 //    }
-
-    /**
-     * Set the corner radius of a specific corner in px.
-     *
-     * @param corner the corner to set.
-     * @param radius the corner radius to set in px.
-     */
+        
+        /**
+         * Set the corner radius of a specific corner in px.
+         *
+         * @param corner the corner to set.
+         * @param radius the corner radius to set in px.
+         */
 //    public void setCornerRadius(@Corner int corner, float radius) {
 //        if (cornerRadius[corner] == radius) {
 //            return;
@@ -91,16 +91,16 @@ final class RoundedCornerss {
 //        updateBackgroundDrawableAttrs(false);
 //        imageView.invalidate();
 //    }
-
-    /**
-     * Set the corner radii of each corner individually. Currently only one unique nonzero value is
-     * supported.
-     *
-//     * @param topLeft radius of the top left corner in px.
-//     * @param topRight radius of the top right corner in px.
-//     * @param bottomRight radius of the bottom right corner in px.
-//     * @param bottomLeft radius of the bottom left corner in px.
-     */
+        
+        /**
+         * Set the corner radii of each corner individually. Currently only one unique nonzero value is
+         * supported.
+         *
+         //     * @param topLeft radius of the top left corner in px.
+         //     * @param topRight radius of the top right corner in px.
+         //     * @param bottomRight radius of the bottom right corner in px.
+         //     * @param bottomLeft radius of the bottom left corner in px.
+         */
 //    public void setCornerRadius(float topLeft, float topRight, float bottomLeft, float bottomRight) {
 //        if (cornerRadius[Corner.TOP_LEFT] == topLeft && cornerRadius[Corner.TOP_RIGHT] == topRight && cornerRadius[Corner.BOTTOM_RIGHT] == bottomRight && cornerRadius[Corner.BOTTOM_LEFT] == bottomLeft) {
 //            return;
@@ -115,11 +115,6 @@ final class RoundedCornerss {
 //        updateBackgroundDrawableAttrs(false);
 //        imageView.invalidate();
 //    }
-
-
-
-
-
 
 
 //    @Override
@@ -157,7 +152,7 @@ final class RoundedCornerss {
 
 //    private void updateAttrs(Drawable drawable) {
 //        if (drawable == null) { return; }
-
+        
         // TODO how this can be possible?
 //        if (drawable instanceof SuperDrawable) {
 //            ((SuperDrawable) drawable).setCornerRadius(
@@ -170,7 +165,6 @@ final class RoundedCornerss {
 //    }
 
 
-
 //    private void updateBackgroundDrawableAttrs(boolean convert) {
 //        if (mutateBackground) {
 //            if (convert) {
@@ -181,13 +175,6 @@ final class RoundedCornerss {
 //    }
 
 
-
-
-
-
-
-
-
 //    @Override
 //    public Drawable delegateSetImageBitmap(Bitmap bm) {
 //        drawable = SuperDrawable.fromBitmap(bm);
@@ -195,12 +182,6 @@ final class RoundedCornerss {
 //        imageView.setImageDrawable(this.drawable);
 //        return drawable;
 //    }
-
-
-
-
-
-
 
 
 //    @Override
@@ -290,7 +271,6 @@ final class RoundedCornerss {
 //        //noinspection deprecation
 //        super.setBackgroundDrawable(backgroundDrawable);
 //    }
-
 
 
 //    /**

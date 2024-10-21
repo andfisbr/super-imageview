@@ -15,33 +15,29 @@ import androidx.annotation.Nullable;
  */
 //public class RoundedBitmapViewDrawable extends RoundedBitmapDrawable {
 class RoundedBitmapViewDrawable extends Drawable {
-
-    @Override
-    public void draw(@NonNull Canvas canvas) {
-
-    }
-
-    @Override
-    public void setAlpha(int alpha) {
-
-    }
-
-    @Override
-    public void setColorFilter(@Nullable ColorFilter colorFilter) {
-
-    }
-
-    @Override
-    public int getOpacity() {
-        return PixelFormat.TRANSLUCENT;
-    }
-
-
-
-
-
-
-    //
+        
+        @Override
+        public void draw (@NonNull Canvas canvas) {
+        
+        }
+        
+        @Override
+        public void setAlpha (int alpha) {
+        
+        }
+        
+        @Override
+        public void setColorFilter (@Nullable ColorFilter colorFilter) {
+        
+        }
+        
+        @Override
+        public int getOpacity () {
+                return PixelFormat.TRANSLUCENT;
+        }
+        
+        
+        //
 //    private final BitmapShader bitmapShader;
 //    private final Paint p;
 //    private final RectF rect;
@@ -64,8 +60,6 @@ class RoundedBitmapViewDrawable extends Drawable {
 //        canvas.drawRoundRect(rect, borderRadius, borderRadius, p);
 //    }
 //
-
-
 
 
 //    private static final float DEFAULT_RADIUS = 0f;

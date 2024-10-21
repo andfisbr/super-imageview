@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-        namespace 'com.codeforvictory.android.superimageview.samples'
+        namespace 'com.codeforvictory.superimageview.samples'
         compileSdk 34
         
         defaultConfig {
-                applicationId 'com.codeforvictory.android.superimageview.samples'
+                applicationId 'com.codeforvictory.superimageview.samples'
                 minSdk 26
                 targetSdk 34
                 

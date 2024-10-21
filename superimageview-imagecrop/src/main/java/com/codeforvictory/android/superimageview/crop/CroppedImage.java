@@ -62,7 +62,7 @@ public final class CroppedImage implements Crop {
         }
 
         final TypedArray a = context.obtainStyledAttributes(attributeSet, R.styleable.siv_ImageCrop);
-        cropType = a.getInt(com.codeforvictory.android.superimageview.R.styleable.siv_SuperImageView_siv_cropImplementation, CropType.NONE);
+        cropType = a.getInt(R.styleable.siv_ImageCrop_siv_crop, CropType.NONE);
         a.recycle();
 
         setupScaleType();
